@@ -1,0 +1,40 @@
+------------------------------
+RUN THESE SQL CODES IN A DATABASE CALLED "demo"
+
+01. -->
+CREATE TABLE users (
+  id INT(11) AUTO_INCREMENT PRIMARY KEY,
+  username VARCHAR(50) COLLATE utf8mb4_general_ci NOT NULL,
+  password VARCHAR(255) COLLATE utf8mb4_general_ci NOT NULL,
+  created_at DATETIME DEFAULT current_timestamp(),
+  status TEXT COLLATE utf8mb4_general_ci NOT NULL DEFAULT 'offline',
+  fb TEXT COLLATE utf8mb4_general_ci,
+  insta TEXT COLLATE utf8mb4_general_ci,
+  discord TEXT COLLATE utf8mb4_general_ci,
+  tiktok TEXT COLLATE utf8mb4_general_ci,
+  twitter TEXT COLLATE utf8mb4_general_ci,
+  reddit TEXT COLLATE utf8mb4_general_ci,
+  github TEXT COLLATE utf8mb4_general_ci,
+  twitch TEXT COLLATE utf8mb4_general_ci,
+  steam TEXT COLLATE utf8mb4_general_ci,
+  web TEXT COLLATE utf8mb4_general_ci
+);
+
+02. -->
+CREATE INDEX idx_username ON your_table_name (username);
+
+03. -->
+CREATE TABLE rooms (
+  id INT(11) AUTO_INCREMENT PRIMARY KEY,
+  room_id VARCHAR(6) COLLATE utf8mb4_general_ci NOT NULL,
+  title VARCHAR(255) COLLATE utf8mb4_general_ci NOT NULL,
+  creator_username VARCHAR(255) COLLATE utf8mb4_general_ci NOT NULL,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP()
+);
+
+04. -->
+CREATE TABLE participants (
+  id INT(11) AUTO_INCREMENT PRIMARY KEY,
+  room_id VARCHAR(6) COLLATE utf8mb4_general_ci NOT NULL,
+  participant VARCHAR(255) COLLATE utf8mb4_general_ci NOT NULL
+);
